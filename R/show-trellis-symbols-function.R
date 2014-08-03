@@ -1,4 +1,4 @@
-#' @title Show available colors in Lattice graphs
+#' @title Show available colors and symbols for Lattice graphics
 #' @description Show the various colors and symbols in Trellis based on integer index
 #' as given in palette().
 #' @usage
