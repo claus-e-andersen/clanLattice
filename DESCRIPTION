@@ -1,9 +1,13 @@
 Package: clanLattice
-Title: What the package does (short line)
-Version: 0.1
-Authors@R: "First Last <first.last@example.com> [aut, cre]"
-Description: What the package does (paragraph)
+Version: 0.008
+Date: 2014-08-03
+Title: R functions Lattice plotting
+Author: Claus E. Andersen
+Maintainer: Claus E. Andersen <clan@dtu.dk>
+Description: An R library of functions for Lattice plotting 
+URL: www.dtu.dk
 Depends:
     R (>= 3.1.1)
-License: What license is it under?
+License: GPL (>= 3)
+Repository: GITHUB / claus-e-andersen
 LazyData: true
