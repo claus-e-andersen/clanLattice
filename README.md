@@ -18,3 +18,13 @@ library(devtools)
 install_github("clanLattice","claus-e-andersen")
 
 library(clanLattice)
+
+
+(3) To get a list of functions in the library, just call:
+
+help(package=clanLattice)
+
+or
+
+library(help=clanLattice)
+
