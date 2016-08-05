@@ -1,16 +1,15 @@
-#' @title create.latex.table
-#' @description create.latex.table.
-#' @usage
-#' create.latex.table()
-#' @name clanLattice
-#' @author Claus E. Andersen
-#' @return create.latex.table.
-#' @export create.latex.table
-create.latex.table <- function(df, pretty.func = function(x, col.num = 1){
-    x
-  }
-  , NL = "\\\\", col.sign = "&")
-  {
+#' Title create.latex.table
+#'
+#' @param df 
+#' @param pretty.func = function(x, col.num = 1){x}
+#' @param NL 
+#' @param col.sign 
+#'
+#' @return
+#' @export
+#'
+#' @examples whatever
+create.latex.table <- function(df, pretty.func = function(x, col.num = 1){x}, NL = "\\\\", col.sign = "&"){
     # Library: clan
     # Created: March 22, 2002
     # Revised: March 22, 2002
