@@ -5,7 +5,7 @@
 #' @param NL 
 #' @param col.sign 
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples whatever
