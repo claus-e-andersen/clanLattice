@@ -1,6 +1,12 @@
-create.latex.table <-
-  function(df, pretty.func = function(x, col.num = 1)
-  {
+#' @title create.latex.table
+#' @description create.latex.table.
+#' @usage
+#' create.latex.table()
+#' @name clanLattice
+#' @author Claus E. Andersen
+#' @return create.latex.table.
+#' @export create.latex.table
+create.latex.table <- function(df, pretty.func = function(x, col.num = 1){
     x
   }
   , NL = "\\\\", col.sign = "&")
