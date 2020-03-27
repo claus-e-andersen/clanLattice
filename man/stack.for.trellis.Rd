@@ -58,4 +58,3 @@ It is now possible to mate a dotplot as follows dotplot(ID~t.const|component,dat
 \author{
 Claus E. Andersen
 }
-

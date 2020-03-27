@@ -22,4 +22,3 @@ Demonstration of the use of panel.binned.errorbars for Lattice graphics.
 \author{
 Claus E. Andersen
 }
-

@@ -63,4 +63,3 @@ that should not be plotted (e.g. if they are within symbols).
 \author{
 Claus E. Andersen
 }
-

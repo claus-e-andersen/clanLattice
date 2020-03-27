@@ -28,4 +28,3 @@ function is useful when lattice plots are conditioned using factors with a mixtu
 \author{
 Claus E. Andersen
 }
-

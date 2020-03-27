@@ -57,4 +57,3 @@ into lattice graphs. Requires grid, lattice and clanTools.
 \author{
 Claus E. Andersen
 }
-

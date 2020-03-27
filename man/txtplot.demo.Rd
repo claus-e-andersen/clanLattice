@@ -16,4 +16,3 @@ text and dataframe.
 \author{
 Claus E. Andersen
 }
-

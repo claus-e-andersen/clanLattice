@@ -21,4 +21,3 @@ x-values and calculate standard deviations, for example.
 \author{
 Claus E. Andersen
 }
-

@@ -31,4 +31,3 @@ Define defaults for lattice plotting (cf. settrellis in the Hmisc library)
 \author{
 Claus E. Andersen
 }
-

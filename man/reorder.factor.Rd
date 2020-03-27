@@ -27,4 +27,3 @@ levels in the factor.
 \author{
 Claus E. Andersen
 }
-

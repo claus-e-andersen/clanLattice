@@ -19,4 +19,3 @@ Show the various colors
 \author{
 Claus E. Andersen
 }
-

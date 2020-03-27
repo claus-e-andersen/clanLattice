@@ -91,4 +91,3 @@ simple way of literate programming.
 \author{
 Claus E. Andersen
 }
-

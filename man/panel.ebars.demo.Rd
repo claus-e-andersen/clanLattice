@@ -15,4 +15,3 @@ Demonstration of how to use panel.ebars for drawing error bars in lattice plots
 \author{
 Claus E. Andersen
 }
-

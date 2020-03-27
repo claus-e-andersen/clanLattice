@@ -41,4 +41,3 @@ plots to be placed should be given as a list.
 \author{
 Claus E. Andersen
 }
-

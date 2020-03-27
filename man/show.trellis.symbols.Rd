@@ -30,4 +30,3 @@ as given in palette().
 \author{
 Claus E. Andersen
 }
-

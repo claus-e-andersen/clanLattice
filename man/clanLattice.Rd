@@ -15,4 +15,3 @@ Version function for the clanLattice library.
 \author{
 Claus E. Andersen
 }
-
