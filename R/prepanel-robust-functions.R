@@ -24,7 +24,7 @@
 #' 
 #' dotplot(cap ~ pA | paste(model),
 #'  
-#' limit.mean = 0.05, # Make sure we have an x-scale of at least +/- 5% of the mean
+#' limit.mean = 0.05, # Make sure we have an x-scale of at least +/- 5\% of the mean
 #' 
 #' prepanel=prepanel.robust.x,
 #' 
@@ -88,7 +88,7 @@ prepanel.robust.x <- function(x,y,...,limit.robust=0.01, limit.mean=0.0001, limi
 #' 
 #' dotplot(cap ~ pA | paste(model),
 #'  
-#' limit.mean = 0.05, # Make sure we have an x-scale of at least +/- 5% of the mean
+#' limit.mean = 0.05, # Make sure we have an x-scale of at least +/- 5\% of the mean
 #' 
 #' prepanel=prepanel.robust.x,
 #' 
@@ -151,7 +151,7 @@ prepanel.robust.y <- function(x,y,...,limit.robust=0.01, limit.mean=0.0001, limi
 #' 
 #' dotplot(cap ~ pA | paste(model),
 #'  
-#' limit.mean = 0.05, # Make sure we have an x-scale of at least +/- 5% of the mean
+#' limit.mean = 0.05, # Make sure we have an x-scale of at least +/- 5\% of the mean
 #' 
 #' prepanel=prepanel.robust.x,
 #' 

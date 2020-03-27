@@ -47,7 +47,7 @@ pA = c(NA,NA,rnorm(N-2,mean=9e99,sd=0.001)))
 
 dotplot(cap ~ pA | paste(model),
  
-limit.mean = 0.05, # Make sure we have an x-scale of at least +/- 5% of the mean
+limit.mean = 0.05, # Make sure we have an x-scale of at least +/- 5\% of the mean
 
 prepanel=prepanel.robust.x,
 
