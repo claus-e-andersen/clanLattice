@@ -44,10 +44,10 @@ Example:
   
   xyplot(counts ~ degC|instrument,
     data=df,
-    panel=function(x,y,...){
+    panel=function(x,y,...)\{
     panel.xyplot(x,y,...)
     panel.ebars.grouped(x,y,type="sd",err.type="b",err.col="red",err.pch=16,err.cex=0.8,err.lwd=1,err.width=1.2,err.offset=0) 
-    })
+    \})
     
 See also \link{panel.binned.errorbars}, \link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars2}.
 }
