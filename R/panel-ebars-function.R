@@ -10,7 +10,8 @@
 #' Provide either x.minus or x.plus or use x.err if the errorbar is 
 #' symmetrical. Likewise for the y-errorbar. Apply NA values for errorbars
 #' that should not be plotted (e.g. if they are within symbols).
-#'    
+#' See also \link{panel.ebars2} and \link{panel.ebars.grouped}.
+#'     
 #' @usage
 #' See the function panel.ebars.demo
 #' @name panel.ebars
@@ -171,7 +172,7 @@ panel.ebars <- function(x, y, subscripts,
 #' that should not be plotted (e.g. if they are within symbols).
 #'    
 #' Improvements: Now works with lattice dotplots.
-#'   
+#' See also \link{panel.ebars} and \link{panel.ebars.grouped}.
 #' @usage
 #' See the function panel.ebars.demo
 #' @name panel.ebars2
@@ -274,4 +275,99 @@ panel.ebars2 <- function (x, y, subscripts, x.wanted = TRUE, y.wanted = TRUE,
       # Feb. 22, 2019
     }
   }# panel.ebars2
+
+
+
+
+
+#' @title Compute groupwise standard deviations and plot errorbars (lattice panel)
+#' @description This function has been designed for plotting of errorbars in lattice plots.
+#' 
+#' Example:
+#' 
+#'   N <- 50
+#'   
+#'   df <- data.frame(degC = sample(20:25,N,replace=TRUE),counts=NA,instrument=sample(c("Fluke","HP"),N,replace=TRUE))
+#'   
+#'   df$counts <- df$degC * 1.1 + rnorm(nrow(df),mean=0,sd=0.3)
+#'   
+#'   
+#'   xyplot(counts ~ degC|instrument,
+#'   
+#'     data=df,
+#'     
+#'     panel=function(x,y,...){
+#'     
+#'     panel.xyplot(x,y,...)
+#'     
+#'     panel.ebars.grouped(x,y,type="sd",err.type="b",err.col="red",err.pch=16,err.cex=0.8,err.lwd=1,err.width=1.2,err.offset=0) 
+#'     })
+#'     
+#' See also \link{panel.ebars} and \link{panel.ebars2}.
+#' 
+#' @usage See above
+#' @name panel.ebars.grouped
+#' @author Claus E. Andersen
+#' @return A Lattice panel 
+#' @param x = x-coordinate for the data points.
+#' @param y = y-coordinate for the data points.
+#' @param type (only one option is available, "sd").
+#' @param err.type is the type of plot for the mean values (e.g. "n", "p", or "b").
+#' @param err.col is the color of the error bar (and mean symbol)  
+#' @param err.pch is the plotting symbol for mean values.
+#' @param err.cex is the size of the plotting symbol for the mean values.
+#' @param err.lwd is the line width for the error bars.
+#' @param err.width is the width of the error bars (i.e. the wiskers) in mm.
+#' @param err.offsetis an offset for the error bar relative to the mean (x).
+#' @export panel.ebars.grouped
+panel.ebars.grouped <- function(x, y, type="sd", level=0.95, err.col=1, err.type="p", err.pch=16, err.cex=1, err.lwd=1, err.width=3, err.offset=0,...){
+  # Compute and plot groupwise standard deviations and errorbars.
+  # Claus E. Andwersen
+  # March 28, 2020
+  # Requires;: dplyr, grid and lattice
+  
+  # From mm to x-coordinates
+  x.width <- convertX(unit(c(0, err.width), "mm"), "native", valueOnly = TRUE) 
+  x.width <- x.width[2] - x.width[1]
+  
+  if(type=="sd"){
+    # Compute groupwise standard deviations
+    data.frame(x=x,y=y) %>%
+      group_by(x) %>%
+      summarize(x.mean=mean(x), y.mean=mean(y), y.sd=sd(y)) %>%
+      arrange(x.mean,y.mean) %>%
+      data.frame(.) -> df2
+    x.mean <- df2$x.mean
+    y.mean <- df2$y.mean
+    y.sd   <- df2$y.sd
+    y.low <- y.sd
+    y.high <- y.sd
+    Iy.low <- y.mean - y.low
+    Iy.upp <- y.mean  + y.low
+  }# sd
+  
+  if(err.cex>0){
+    panel.xyplot(x.mean,y.mean,type=err.type,col=err.col,pch=err.pch,cex=err.cex)
+  }
+  
+  xx.diff <- diff(range(x.mean)) * err.width
+  
+  x.mean <- x.mean + err.offset
+  
+  for(i in 1:length(x.mean)){
+    panel.segments(x.mean[i],Iy.low[i],
+                   x.mean[i],Iy.upp[i],
+                   col=err.col,lwd=err.lwd)
+    
+    panel.segments(x.mean[i]-x.width,Iy.low[i],
+                   x.mean[i]+x.width,Iy.low[i],
+                   col=err.col,lwd=err.lwd)
+    
+    panel.segments(x.mean[i]-x.width,Iy.upp[i],
+                   x.mean[i]+x.width,Iy.upp[i],
+                   col=err.col,lwd=err.lwd)
+  }
+} # panel.ebars.grouped 
+
+
 
