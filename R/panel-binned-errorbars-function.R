@@ -1,8 +1,10 @@
 #' @title Lattice plotting panel for binned data (e.g. aggregared standard deviations)
 #' @description This is a panel function for Lattice plotting. The data is binned in accordance with the 
 #' x-values and calculate standard deviations, for example. 
+#' See also\link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars2}.
+
 #' @usage
-#' see the body of the function plut the function called panel.binned.errorbars.demo
+#' see the body of the function plut the function called \link{panel.binned.errorbars.demo}.
 #' @name panel.binned.errorbars
 #' @author Claus E. Andersen
 #' @return plt A Lattice plot showing the colors

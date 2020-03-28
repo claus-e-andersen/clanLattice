@@ -61,7 +61,7 @@ symmetrical. Likewise for the y-errorbar. Apply NA values for errorbars
 that should not be plotted (e.g. if they are within symbols).
    
 Improvements: Now works with lattice dotplots.
-See also \link{panel.ebars} and \link{panel.ebars.grouped}.
+See also \link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars.grouped}.
 }
 \author{
 Claus E. Andersen

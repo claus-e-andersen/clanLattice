@@ -10,7 +10,7 @@
 #' Provide either x.minus or x.plus or use x.err if the errorbar is 
 #' symmetrical. Likewise for the y-errorbar. Apply NA values for errorbars
 #' that should not be plotted (e.g. if they are within symbols).
-#' See also \link{panel.ebars2} and \link{panel.ebars.grouped}.
+#' See also \link{panel.binned.errorbars}, \link{panel.ebars2} and \link{panel.ebars.grouped}.
 #'     
 #' @usage
 #' See the function panel.ebars.demo
@@ -172,7 +172,7 @@ panel.ebars <- function(x, y, subscripts,
 #' that should not be plotted (e.g. if they are within symbols).
 #'    
 #' Improvements: Now works with lattice dotplots.
-#' See also \link{panel.ebars} and \link{panel.ebars.grouped}.
+#' See also \link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars.grouped}.
 #' @usage
 #' See the function panel.ebars.demo
 #' @name panel.ebars2
@@ -282,7 +282,7 @@ panel.ebars2 <- function (x, y, subscripts, x.wanted = TRUE, y.wanted = TRUE,
 
 #' @title Compute groupwise standard deviations and plot errorbars (lattice panel)
 #' @description This function has been designed for plotting of errorbars in lattice plots.
-#' 
+#' This is an alternative to the more complex panel-function called \link{panel.binned.errorbars}.
 #' Example:
 #' 
 #'   N <- 50
@@ -303,7 +303,7 @@ panel.ebars2 <- function (x, y, subscripts, x.wanted = TRUE, y.wanted = TRUE,
 #'     panel.ebars.grouped(x,y,type="sd",err.type="b",err.col="red",err.pch=16,err.cex=0.8,err.lwd=1,err.width=1.2,err.offset=0) 
 #'     })
 #'     
-#' See also \link{panel.ebars} and \link{panel.ebars2}.
+#' See also \link{panel.binned.errorbars}, \link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars2}.
 #' 
 #' @usage See above
 #' @name panel.ebars.grouped

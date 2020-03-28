@@ -1,5 +1,6 @@
 #' @title Demonstration of how to use panel.ebars for drawing error bars in lattice plots
 #' @description Demonstration of how to use panel.ebars for drawing error bars in lattice plots
+#' See also\link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars2}.
 #' @usage
 #' panel.ebars.demo()
 #' @name panel.ebars.demo

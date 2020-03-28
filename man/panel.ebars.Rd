@@ -59,7 +59,7 @@ without use of panel.xyplot or panel.superpose.
 Provide either x.minus or x.plus or use x.err if the errorbar is 
 symmetrical. Likewise for the y-errorbar. Apply NA values for errorbars
 that should not be plotted (e.g. if they are within symbols).
-See also \link{panel.ebars2} and \link{panel.ebars.grouped}.
+See also \link{panel.binned.errorbars}, \link{panel.ebars2} and \link{panel.ebars.grouped}.
 }
 \author{
 Claus E. Andersen

@@ -1,5 +1,6 @@
 #' @title Demonstration of the use of panel.binned.errorbars for Lattice graphics
 #' @description Demonstration of the use of panel.binned.errorbars for Lattice graphics.
+#' See also\link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars2}.
 #' @usage
 #' panel.binned.errorbars.demo()
 #' @name panel.binned.errorbars.demo

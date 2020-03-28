@@ -32,7 +32,7 @@ A Lattice panel
 }
 \description{
 This function has been designed for plotting of errorbars in lattice plots.
-
+This is an alternative to the more complex panel-function called \link{panel.binned.errorbars}.
 Example:
 
   N <- 50
@@ -53,7 +53,7 @@ Example:
     panel.ebars.grouped(x,y,type="sd",err.type="b",err.col="red",err.pch=16,err.cex=0.8,err.lwd=1,err.width=1.2,err.offset=0) 
     })
     
-See also \link{panel.ebars} and \link{panel.ebars2}.
+See also \link{panel.binned.errorbars}, \link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars2}.
 }
 \author{
 Claus E. Andersen

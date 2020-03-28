@@ -4,7 +4,7 @@
 \alias{panel.binned.errorbars}
 \title{Lattice plotting panel for binned data (e.g. aggregared standard deviations)}
 \usage{
-see the body of the function plut the function called panel.binned.errorbars.demo
+see the body of the function plut the function called \link{panel.binned.errorbars.demo}.
 }
 \arguments{
 \item{x}{is the x-coordinates for the data}
@@ -16,7 +16,8 @@ plt A Lattice plot showing the colors
 }
 \description{
 This is a panel function for Lattice plotting. The data is binned in accordance with the 
-x-values and calculate standard deviations, for example.
+x-values and calculate standard deviations, for example. 
+See also\link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars2}.
 }
 \author{
 Claus E. Andersen
