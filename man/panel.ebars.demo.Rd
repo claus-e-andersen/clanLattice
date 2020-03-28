@@ -11,7 +11,7 @@ Lattice plot examples with error bars
 }
 \description{
 Demonstration of how to use panel.ebars for drawing error bars in lattice plots
-See also\link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars2}.
+See also \link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars2}.
 }
 \author{
 Claus E. Andersen

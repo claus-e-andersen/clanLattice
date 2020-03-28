@@ -18,7 +18,7 @@ The main output is the sideeffect of creating a bunch of lattice plots
 }
 \description{
 Demonstration of the use of panel.binned.errorbars for Lattice graphics.
-See also\link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars2}.
+See also \link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars2}.
 }
 \author{
 Claus E. Andersen

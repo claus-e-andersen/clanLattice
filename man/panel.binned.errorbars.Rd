@@ -17,7 +17,7 @@ plt A Lattice plot showing the colors
 \description{
 This is a panel function for Lattice plotting. The data is binned in accordance with the 
 x-values and calculate standard deviations, for example. 
-See also\link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars2}.
+See also \link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars2}.
 }
 \author{
 Claus E. Andersen
