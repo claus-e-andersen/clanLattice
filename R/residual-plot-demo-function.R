@@ -6,6 +6,10 @@
 #' consists of 3 x 2 panels. The main plots have the same scale, and likewise for 
 #' the residual panels.  
 #' @usage
+#' require(lattice)
+#' require(latticeExtra)
+#' require(dplyr)
+#' require(grid)
 #' plt <- trellis.residual.plot.demo()
 #' print.trellis.plots(list(plt),y.size=c(0.2,0.8))
 #' @name trellis.residual.plot.demo
@@ -88,7 +92,7 @@ trellis.residual.plot.demo <- function(){
     layout.widths=list(strip.left=list(x=1.4)),
     layout.heights=list(strip=list(x=c(1.4)), panel=list(x=c(3,1)))
   )
-  plt.03 <- update(plt2,lattice.options=lat.opt)
+  plt.03 <- update(plt.02,lattice.options=lat.opt)
   
   plt.04 <- combineLimits(plt.03)
   

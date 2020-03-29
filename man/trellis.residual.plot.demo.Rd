@@ -4,6 +4,10 @@
 \alias{trellis.residual.plot.demo}
 \title{Function for demonstrating how to make residual plots in lattice}
 \usage{
+require(lattice)
+require(latticeExtra)
+require(dplyr)
+require(grid)
 plt <- trellis.residual.plot.demo()
 print.trellis.plots(list(plt),y.size=c(0.2,0.8))
 }
