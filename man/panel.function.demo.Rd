@@ -7,7 +7,8 @@
 require(grid)
  require(lattice)
  pp <- panel.function.demo()
- pp$plt3
+ pp
+ pp[[3]]
 }
 \value{
 A Lattice plot
@@ -25,6 +26,7 @@ simply use:
               panel.xyplot(x, y, ...)\} else \{
               panel.superpose(x, y, subscripts,groups, ...)
               \}#if 
+              
 The use of \code{panel.number()}, \code{current.row}, and \code{current.column()} is also demonstrated.
 }
 \author{
