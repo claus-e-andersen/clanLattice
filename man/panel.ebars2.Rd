@@ -10,7 +10,7 @@ require (grid)
 set.trellis(pch=16)
 plt <- dotplot(Species ~ Sepal.Length,
 data=iris,
-main="Simple demonstration of the panel.ebars2 function"
+main="Simple demonstration of the panel.ebars2 function",
 groups=Species,
 auto.key=list(columns=3),
 y.err =iris$Sepal.Width/10, 
