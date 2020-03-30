@@ -32,9 +32,13 @@ require(clanLattice)
 
 require(clanTools)
 
+require(lattice)
+
+require(latticeExtra)
+
 require(grid)
 
-require(lattice)
+require(dplyr)
 
 
 
@@ -43,6 +47,8 @@ txtplot.demo()
 panel.binned.errorbars.demo() 
 
 panel.ebars.demo()
+
+trellis.residual.plot.demo()
 
 trellis.residual.plot.demo()
 
