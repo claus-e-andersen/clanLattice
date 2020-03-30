@@ -174,7 +174,27 @@ panel.ebars <- function(x, y, subscripts,
 #' Improvements: Now works with lattice dotplots.
 #' See also \link{panel.binned.errorbars}, \link{panel.ebars} and \link{panel.ebars.grouped}.
 #' @usage
-#' See the function panel.ebars.demo
+#' require(lattice)
+#' require(clanLattice)
+#' require (grid)
+#' set.trellis(pch=16)
+#' plt <- dotplot(Species ~ Sepal.Length,
+#' data=iris,
+#' main="Simple demonstration of the panel.ebars2 function"
+#' groups=Species,
+#' auto.key=list(columns=3),
+#' y.err =iris$Sepal.Width/10, 
+#' panel = function(x, y, subscripts, groups, ...) {
+#'   yy <- as.numeric(y)
+#'   panel.ebars2(x, yy, subscripts, 
+#'      y.wanted = !FALSE, 
+#'      x.wanted = FALSE, 
+#'      point.wanted = !FALSE,...)
+#'   panel.superpose(x, y, subscripts, groups, ...)
+#'   }
+#'   ) # dotplot
+#'   print(plt)
+#' # See the function panel.ebars.demo for further details
 #' @name panel.ebars2
 #' @author Claus E. Andersen
 #' @return A Lattice panel 
