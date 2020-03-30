@@ -15,16 +15,21 @@ library(devtools)
 
 (2) Then get the clanTools package from github:
 
-install_github("clanLattice","claus-e-andersen")
+install_github("claus-e-andersen/clanLattice")
 
 library(clanLattice)
 
 
 (3) To get a list of functions in the library, just call:
 
-help(package=clanLattice)
+?clanLattice
 
-or
+and click at index link at the bottom of the page.
 
-library(help=clanLattice)
+(4) To actually try something, there are the folowing demonstration functions:
+txtplot.demo() 
+panel.binned.errorbars.demo() 
+panel.ebars.demo()
+
+
 
