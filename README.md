@@ -26,13 +26,16 @@ library(clanLattice)
 
 and click at index link at the bottom of the page.
 
-(4) To actually try something, there are the folowing demonstration functions:
+(4) To actually try something, there are the folowing demonstration functions (to run the demos you will need the following packages installed):
+
+require(clanLattice)   
+
+require(clanTools)
+
+require(grid)
 
 require(lattice)
 
-require(latticeExtra)
-
-require(grid)
 
 
 txtplot.demo()
@@ -41,4 +44,5 @@ panel.binned.errorbars.demo()
 
 panel.ebars.demo()
 
+trellis.residual.plot.demo()
 
