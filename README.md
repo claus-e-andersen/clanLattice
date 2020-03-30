@@ -30,7 +30,7 @@ and click at index link at the bottom of the page.
 
 require(lattice)
 
-require(latticeExtrs)
+require(latticeExtra)
 
 require(grid)
 
