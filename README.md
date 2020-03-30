@@ -13,7 +13,7 @@ library(devtools)
 
 
 
-(2) Then get the clanTools package from github:
+(2) Then get the clanLattice package from github:
 
 install_github("claus-e-andersen/clanLattice")
 
@@ -27,9 +27,13 @@ library(clanLattice)
 and click at index link at the bottom of the page.
 
 (4) To actually try something, there are the folowing demonstration functions:
+
+require(lattice)
+require(latticeExtrs)
+require(grid)
+
 txtplot.demo() 
 panel.binned.errorbars.demo() 
 panel.ebars.demo()
-
 
 
