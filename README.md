@@ -29,11 +29,16 @@ and click at index link at the bottom of the page.
 (4) To actually try something, there are the folowing demonstration functions:
 
 require(lattice)
+
 require(latticeExtrs)
+
 require(grid)
 
-txtplot.demo() 
+
+txtplot.demo()
+
 panel.binned.errorbars.demo() 
+
 panel.ebars.demo()
 
 
