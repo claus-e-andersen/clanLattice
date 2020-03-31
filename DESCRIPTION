@@ -9,9 +9,9 @@ URL: www.dtu.dk
 Depends:
     R (>= 3.1.1)
 Imports:
-lattice,
-latticeExtra,
-dplyr
+    lattice,
+    latticeExtra,
+    dplyr
 License: GPL (>= 3)
 Repository: GITHUB / claus-e-andersen
 LazyData: true
