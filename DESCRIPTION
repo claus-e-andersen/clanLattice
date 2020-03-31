@@ -1,10 +1,10 @@
 Package: clanLattice
 Version: 0.010
 Date: 2020-03-30
-Title: R functions Lattice plotting
+Title: R functions for lattice plotting
 Author: Claus E. Andersen
 Maintainer: Claus E. Andersen <clan@dtu.dk>
-Description: An R library of functions for Lattice plotting
+Description: An R library of functions for lattice plotting
 Depends:
     R (>= 3.1.1),
     lattice
