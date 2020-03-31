@@ -57,39 +57,39 @@ panel.stat <- function(xx,cx=0.1,cy=0.9,dx=0,dy=0.1,
   # 
   cx0 <- cx
   cy0 <- cy
-  if(!is.na(head)){grid.text(head,cx0,cy0,just=just,...); cx0 <- cx0 + dx; cy0 <- cy0 - dy;} 
+  if(!is.na(head)){grid::grid.text(head,cx0,cy0,just=just,...); cx0 <- cx0 + dx; cy0 <- cy0 - dy;} 
   if(select[1]){
-    grid.text(paste('Mean =',round.ca(mean(xx),decimals),unit),cx0,cy0,just=just,...)
+    grid::grid.text(paste('Mean =',clanTools::round.ca(mean(xx),decimals),unit),cx0,cy0,just=just,...)
     cx0 <- cx0 + dx; cy0 <- cy0 - dy
   }
   
   if(select[2]){
-    grid.text(paste('Sd =',round.ca(sd(xx),decimals),unit),cx0,cy0,,just=just,...)
+    grid::grid.text(paste('Sd =',clanTools::round.ca(sd(xx),decimals),unit),cx0,cy0,just=just,...)
     cx0 <- cx0 + dx; cy0 <- cy0 - dy
   }
   
   if(select[3]){
-    grid.text(paste('Rel. sd =',round.ca(sd(xx)/mean(xx)*100,decimals),'%'),cx0,cy0,,just=just,...)
+    grid::grid.text(paste('Rel. sd =', clanTools::round.ca( sd(xx)/mean(xx)*100 ,decimals),'%'),cx0,cy0,just=just,...)
     cx0 <- cx0 + dx; cy0 <- cy0 - dy
   }
   
   if(select[4]){
-    grid.text(paste('N =',length(xx)),cx0,cy0,just=just,...)
+    grid::grid.text(paste('N =',length(xx)),cx0,cy0,just=just,...)
     cx0 <- cx0 + dx; cy0 <- cy0 - dy
   }
   
   if(select[5]){
-    grid.text(paste('Max =',round.ca(max(xx),decimals),unit),cx0,cy0,,just=just,...)
+    grid::grid.text(paste('Max =',clanTools::round.ca(max(xx),decimals),unit),cx0,cy0,just=just,...)
     cx0 <- cx0 + dx; cy0 <- cy0 - dy
   }
   
   if(select[6]){
-    grid.text(paste('Min =',round.ca(min(xx),decimals),unit),cx0,cy0,,just=just,...)
+    grid::grid.text(paste('Min =',clanTools::round.ca(min(xx),decimals),unit),cx0,cy0,just=just,...)
     cx0 <- cx0 + dx; cy0 <- cy0 - dy
   }
   
   if(select[7]){
-    grid.text(paste('Range =',round.ca(max(xx)-min(xx),decimals),unit),cx0,cy0,,just=just,...)
+    grid::grid.text(paste('Range =',clanTools::round.ca(max(xx)-min(xx),decimals),unit),cx0,cy0,just=just,...)
     cx0 <- cx0 + dx; cy0 <- cy0 - dy
   }
 } # panel.stat

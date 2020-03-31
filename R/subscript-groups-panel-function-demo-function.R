@@ -45,7 +45,7 @@ plt2 <- xyplot(Sepal.Length ~ Sepal.Width|Species,
                  print(paste("Column no. = ",current.column()))
                  
                  cex0 <- 0.8
-                 grid.text(paste("SD =",sprintf("%.5f", round(sd(y),5))) ,     x = unit(0.1, "npc"), y = unit(0.85, "npc"), just=0, gp=gpar(cex=cex0))
+                 grid::grid.text(paste("SD =",sprintf("%.5f", round(sd(y),5))) ,     x = grid::unit(0.1, "npc"), y = grid::unit(0.85, "npc"), just=0, gp=grid::gpar(cex=cex0))
                  
                  # Demonstration of the use of subscripts:
                  print(unique(df$Species[subscripts]))
