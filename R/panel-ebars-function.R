@@ -115,16 +115,16 @@ panel.ebars <- function(x, y, subscripts,
     if(x.wanted) { 
       x.plus <- x + x.plus[subscripts]
       x.minus <- x - x.minus[subscripts]
-      x.inner <- grid::convertX(unit(c(0,x.inner),"mm"),"native",valueOnly=TRUE)
+      x.inner <- grid::convertX(grid::unit(c(0,x.inner),"mm"),"native",valueOnly=TRUE)
       x.inner <- x.inner[2] - x.inner[1]  
-      x.offset <- grid::convertY(unit(c(0,x.offset),"mm"),"native",valueOnly=TRUE)
+      x.offset <- grid::convertY(grid::unit(c(0,x.offset),"mm"),"native",valueOnly=TRUE)
       x.offset <- x.offset[2] - x.offset[1]   
       y0 <- y + x.offset
       grid::grid.segments(x.minus, y0, pmax(x.minus,x-x.inner),y0, gp=gp.x, default.units='native')
       grid::grid.segments(pmin(x.plus,x+x.inner), y0, x.plus,  y0, gp=gp.x, default.units='native')
       if(x.width>0){
         # Convert whisker size in mm to (native) user coordinates
-        dy.usr <- grid::convertY(unit(c(0,x.width),"mm"),"native",valueOnly=TRUE)
+        dy.usr <- grid::convertY(grid::unit(c(0,x.width),"mm"),"native",valueOnly=TRUE)
         dy.usr <- dy.usr[2] - dy.usr[1]   
         grid::grid.segments(x.plus,  y0 - dy.usr/2, x.plus,  y0 + dy.usr/2, gp=gp.xwhisker,default.units='native')
         grid::grid.segments(x.minus, y0 - dy.usr/2, x.minus, y0 + dy.usr/2, gp=gp.xwhisker,default.units='native')
@@ -135,16 +135,16 @@ panel.ebars <- function(x, y, subscripts,
     if(y.wanted) {
       y.plus  <- y + y.plus[subscripts]
       y.minus <- y - y.minus[subscripts]
-      y.inner <- grid::convertY(unit(c(0,y.inner),"mm"),"native",valueOnly=TRUE)
+      y.inner <- grid::convertY(grid::unit(c(0,y.inner),"mm"),"native",valueOnly=TRUE)
       y.inner <- y.inner[2] - y.inner[1]  
-      y.offset <- grid::convertX(unit(c(0,y.offset),"mm"),"native",valueOnly=TRUE)
+      y.offset <- grid::convertX(grid::unit(c(0,y.offset),"mm"),"native",valueOnly=TRUE)
       y.offset <- y.offset[2] - y.offset[1]   
       x0 <- x + y.offset
       grid::grid.segments(x0, y.minus, x0, pmax(y.minus,y-y.inner),gp=gp.y,default.units='native')
       grid::grid.segments(x0, pmin(y.plus,y+y.inner), x0, y.plus  ,gp=gp.y,default.units='native')
       if(y.width>0){
         # Convert whisker size in mm to (native) user coordinates
-        dx.usr <- grid::convertX(unit(c(0,y.width),"mm"),"native",valueOnly=TRUE)
+        dx.usr <- grid::convertX(grid::unit(c(0,y.width),"mm"),"native",valueOnly=TRUE)
         dx.usr <- dx.usr[2] - dx.usr[1]  
         grid::grid.segments(x0 - dx.usr/2, y.plus,  x0 + dx.usr/2, y.plus ,gp=gp.ywhisker, default.units='native')
         grid::grid.segments(x0 - dx.usr/2, y.minus, x0 + dx.usr/2, y.minus,gp=gp.ywhisker, default.units='native')
@@ -244,10 +244,10 @@ panel.ebars2 <- function (x, y, subscripts, x.wanted = TRUE, y.wanted = TRUE,
     if (x.wanted) {
       x.plus <- x + x.plus[subscripts]
       x.minus <- x - x.minus[subscripts]
-      x.inner <- grid::convertX(unit(c(0, x.inner), "mm"), "native", 
+      x.inner <- grid::convertX(grid::unit(c(0, x.inner), "mm"), "native", 
                           valueOnly = TRUE)
       x.inner <- x.inner[2] - x.inner[1]
-      x.offset <- grid::convertY(unit(c(0, x.offset), "mm"), "native", 
+      x.offset <- grid::convertY(grid::unit(c(0, x.offset), "mm"), "native", 
                            valueOnly = TRUE)
       x.offset <- x.offset[2] - x.offset[1]
       y0 <- y + x.offset
@@ -256,7 +256,7 @@ panel.ebars2 <- function (x, y, subscripts, x.wanted = TRUE, y.wanted = TRUE,
       grid::grid.segments(pmin(x.plus, x + x.inner), y0, x.plus, 
                     y0, gp = gp.x, default.units = "native")
       if (x.width > 0) {
-        dy.usr <-grid::convertY(unit(c(0, x.width), "mm"), "native", 
+        dy.usr <-grid::convertY(grid::unit(c(0, x.width), "mm"), "native", 
                            valueOnly = TRUE)
         dy.usr <- dy.usr[2] - dy.usr[1]
         grid::grid.segments(x.plus, y0 - dy.usr/2, x.plus, y0 + 
@@ -268,10 +268,10 @@ panel.ebars2 <- function (x, y, subscripts, x.wanted = TRUE, y.wanted = TRUE,
     if (y.wanted) {
       y.plus <- y + y.plus[subscripts]
       y.minus <- y - y.minus[subscripts]
-      y.inner <- grid::convertY(unit(c(0, y.inner), "mm"), "native", 
+      y.inner <- grid::convertY(grid::unit(c(0, y.inner), "mm"), "native", 
                           valueOnly = TRUE)
       y.inner <- y.inner[2] - y.inner[1]
-      y.offset <- grid::convertX(unit(c(0, y.offset), "mm"), "native", 
+      y.offset <- grid::convertX(grid::unit(c(0, y.offset), "mm"), "native", 
                            valueOnly = TRUE)
       y.offset <- y.offset[2] - y.offset[1]
       x0 <- x + y.offset
@@ -280,7 +280,7 @@ panel.ebars2 <- function (x, y, subscripts, x.wanted = TRUE, y.wanted = TRUE,
       grid::grid.segments(x0, pmin(y.plus, y + y.inner), x0, y.plus, 
                     gp = gp.y, default.units = "native")
       if (y.width > 0) {
-        dx.usr <- grid::convertX(unit(c(0, y.width), "mm"), "native", 
+        dx.usr <- grid::convertX(grid::unit(c(0, y.width), "mm"), "native", 
                            valueOnly = TRUE)
         dx.usr <- dx.usr[2] - dx.usr[1]
         grid::grid.segments(x0 - dx.usr/2, y.plus, x0 + dx.usr/2, 
@@ -343,7 +343,7 @@ panel.ebars.grouped <- function(x, y, type="sd", level=0.95, err.col=1, err.type
   # Requires;: dplyr, grid and lattice
   
   # From mm to x-coordinates
-  x.width <- grid::convertX(unit(c(0, err.width), "mm"), "native", valueOnly = TRUE) 
+  x.width <- grid::convertX(grid::unit(c(0, err.width), "mm"), "native", valueOnly = TRUE) 
   x.width <- x.width[2] - x.width[1]
   
   if(type=="sd"){
