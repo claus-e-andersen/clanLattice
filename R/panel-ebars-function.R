@@ -49,10 +49,10 @@ panel.ebars <- function(x, y, subscripts,
            x.width  = 2, y.width  = 2,
            x.inner  = 2, y.inner  = 2,
            x.offset = 0, y.offset = 0, 
-           gp.x=gpar(),gp.xwhisker=gpar(),
-           gp.y=gpar(),gp.ywhisker=gpar(),
+           gp.x=grid::gpar(),gp.xwhisker=grid::gpar(),
+           gp.y=grid::gpar(),gp.ywhisker=grid::gpar(),
            point.wanted = FALSE, 
-           gp.point=gpar(),
+           gp.point=grid::gpar(),
            ...){
     # This function has been designed for plotting of errorbars in lattice plots.
     # It handles both x and y-errorbars as well as asymmetrical and symmetrical errorbars.
@@ -225,9 +225,9 @@ panel.ebars <- function(x, y, subscripts,
 panel.ebars2 <- function (x, y, subscripts, x.wanted = TRUE, y.wanted = TRUE, 
             x.err = NULL, x.minus = NULL, x.plus = NULL, y.err = NULL, 
             y.minus = NULL, y.plus = NULL, x.width = 4, y.width = 4, 
-            x.inner = 3, y.inner = 2, x.offset = 0, y.offset = 0, gp.x = gpar(),  
-            gp.xwhisker = gpar(), gp.y = gpar(), gp.ywhisker = gpar(),
-            point.wanted = FALSE, gp.point = gpar(), ...) 
+            x.inner = 3, y.inner = 2, x.offset = 0, y.offset = 0, gp.x = grid::gpar(),  
+            gp.xwhisker = grid::gpar(), gp.y = grid::gpar(), gp.ywhisker = grid::gpar(),
+            point.wanted = FALSE, gp.point = grid::gpar(), ...) 
   {
     if (is.null(x.err)) 
       x.err <- rep(NA, length(x))
