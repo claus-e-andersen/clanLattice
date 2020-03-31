@@ -7,12 +7,11 @@ Maintainer: Claus E. Andersen <clan@dtu.dk>
 Description: An R library of functions for Lattice plotting
 URL: www.dtu.dk
 Depends:
-    R (>= 3.1.1)
-Imports:
+    R (>= 3.1.1),
+    dplyr,
     grid,
     lattice,
-    latticeExtra,
-    dplyr
+    latticeExtra
 License: GPL (>= 3)
 Repository: GITHUB / claus-e-andersen
 LazyData: true
