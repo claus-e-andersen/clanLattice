@@ -68,7 +68,7 @@ txtplot <- function(txt, new = TRUE, start.pos = NULL, maintain.start.pos = TRUE
                     char.groupC = NULL, 
                     trace = FALSE, 
                     x.start.default=0, y.start.default=1,
-                    vp = viewport(x=unit(0.025,"npc"),y=unit(0.025,"npc"),width=unit(0.95,"npc"),height=unit(0.95,"npc"),just=c("left","bottom"),name="vp.txtplot"),
+                    vp = viewport(x=grid::unit(0.025,"npc"),y=grid::unit(0.025,"npc"),width=grid::unit(0.95,"npc"),height=grid::unit(0.95,"npc"),just=c("left","bottom"),name="vp.txtplot"),
                     ...)
 { # This function can print text or dataframes on a separate graphsheet or on an excisting graph.
   # The main idea behind the function is to add experimental or analytical details (=text) on
@@ -154,11 +154,11 @@ txtplot <- function(txt, new = TRUE, start.pos = NULL, maintain.start.pos = TRUE
     # Create a new (empty) graphsheet for trellis graphics
     #	Old S-plus:	print.trellis.plots(list(NULL))
     #		          print.trellis(list(NULL))
-    grid.newpage()
+    grid::grid.newpage()
   }
   
   # Always make a viewport:
-  pushViewport(vp)
+  grid::pushViewport(vp)
   
   usr <- par("usr")
   if(trace) {
@@ -332,8 +332,8 @@ txtplot <- function(txt, new = TRUE, start.pos = NULL, maintain.start.pos = TRUE
       if(!(ch == "")) x0 <- x0 + char.width
       
       if(line.no > page.size) {
-        grid.newpage()
-        pushViewport(vp)
+        grid::grid.newpage()
+        grid::pushViewport(vp)
         line.no <- 1
         y0 <- y.start.default # Was: 1.
       }
