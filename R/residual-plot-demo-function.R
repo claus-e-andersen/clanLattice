@@ -68,16 +68,16 @@ trellis.residual.plot.demo <- function(){
                        panel.abline(lm(y~x))
                        panel.abline(h=0,lty='dashed')
                        panel.abline(v=0,lty='dashed')
-                       grid::grid.text(paste("Mean =",sprintf("%.5f", round(mean(x),5))),  x = grid::unit(0.1, "npc"), y = grid::unit(0.95, "npc"),just=0,gp=gpar(cex=cex0))
-                       grid::grid.text(paste("SD =",sprintf("%.5f", round(sd(x),5))) ,     x = grid::unit(0.1, "npc"), y = grid::unit(0.85, "npc"),just=0,gp=gpar(cex=cex0))
-                       grid::grid.text(paste("N =",length(x)),                             x = grid::unit(0.1, "npc"), y = grid::unit(0.75, "npc"),just=0,gp=gpar(cex=cex0))
+                       grid::grid.text(paste("Mean =",sprintf("%.5f", round(mean(x),5))),  x = grid::unit(0.1, "npc"), y = grid::unit(0.95, "npc"),just=0,gp=grid::gpar(cex=cex0))
+                       grid::grid.text(paste("SD =",sprintf("%.5f", round(sd(x),5))) ,     x = grid::unit(0.1, "npc"), y = grid::unit(0.85, "npc"),just=0,gp=grid::gpar(cex=cex0))
+                       grid::grid.text(paste("N =",length(x)),                             x = grid::unit(0.1, "npc"), y = grid::unit(0.75, "npc"),just=0,gp=grid::gpar(cex=cex0))
                      }# Main panels
                      
                      if(current.row() %in% 2){
                        # Residuals
                        panel.abline(h=0)
                        panel.abline(v=0,lty='dashed')
-                       grid::grid.text(paste("SD =",sprintf("%.5f", round(sd(y),5))) ,     x = grid::unit(0.1, "npc"), y = grid::unit(0.85, "npc"),just=0,gp=gpar(cex=cex0))
+                       grid::grid.text(paste("SD =",sprintf("%.5f", round(sd(y),5))) ,     x = grid::unit(0.1, "npc"), y = grid::unit(0.85, "npc"),just=0,gp=grid::gpar(cex=cex0))
                      }# Residual panels
                      
                    } # panel function
