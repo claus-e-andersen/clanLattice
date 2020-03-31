@@ -9,6 +9,7 @@ URL: www.dtu.dk
 Depends:
     R (>= 3.1.1)
 Imports:
+    grid,
     lattice,
     latticeExtra,
     dplyr
