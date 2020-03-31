@@ -343,7 +343,7 @@ panel.binned.errorbars <- function(x, y, subscripts,
       # Look up the scale and convert from inch to mm
       # Old S-plus code: mm.pr.scale <- par("uin") * 25.4
       # From S-plus: usr <- par('usr')
-      usr <- c(current.viewport()$xscale, current.viewport()$yscale) 
+      usr <- c(grid::current.viewport()$xscale, grid::current.viewport()$yscale) 
       pin <- par('pin') # size of plot regions in inches
       mm.dx <- pin[1]*25.4 / (usr[2] - usr[1])
       mm.dy <- pin[2]*25.4 / (usr[4] - usr[3])
