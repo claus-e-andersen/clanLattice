@@ -438,7 +438,7 @@ panel.binned.errorbars <- function(x, y, subscripts,
       }
       if(err.control$show.lab.center) {
         txt <- paste(
-          "ltext(x.center+x.offset+x.offset.lab, y.lab+y.offset.lab.center,round.ca(y.center,err.control$round.lab),adj=err.control$adj.lab, cex=err.control$cex.lab, srt=err.control$srt.lab, col=err.control$col.lab)"
+          "ltext(x.center+x.offset+x.offset.lab, y.lab+y.offset.lab.center,clanTools:round.ca(y.center,err.control$round.lab),adj=err.control$adj.lab, cex=err.control$cex.lab, srt=err.control$srt.lab, col=err.control$col.lab)"
         )
         eval(parse(text = txt))
       }
