@@ -36,7 +36,7 @@ trellis.residual.plot.demo <- function(){
     mutate(Gy.residual = Gy.meas - Gy.ref) %>%
     data.frame(.) -> df
   
-  df.stack <- stack.for.trellis(df,c("Gy.meas","Gy.residual"),"Gy")
+  df.stack <- clanLattice::stack.for.trellis(df,c("Gy.meas","Gy.residual"),"Gy")
   
   
   ###############################################
@@ -86,7 +86,7 @@ trellis.residual.plot.demo <- function(){
   ###############################################
   # LatticeExtra tricks
   ###############################################
-  plt.02 <- useOuterStrips(plt.01)
+  plt.02 <- latticeExtra::useOuterStrips(plt.01)
   
   lat.opt <- list(
     layout.widths=list(strip.left=list(x=1.4)),
@@ -94,7 +94,7 @@ trellis.residual.plot.demo <- function(){
   )
   plt.03 <- update(plt.02,lattice.options=lat.opt)
   
-  plt.04 <- combineLimits(plt.03)
+  plt.04 <- latticeExtra::combineLimits(plt.03)
   
   if(FALSE){print.trellis.plots(list(plt.04),y.size=c(0.2,0.8))}
   

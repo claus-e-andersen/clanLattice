@@ -5,7 +5,7 @@
 \title{Define defaults for lattice plotting}
 \usage{
 set.trellis(col=c(8,6,6,6),pch=c(1,16))
-  xyplot(I(rnorm(100))~rnorm(100))#' @name set.trellis
+  xyplot(I(rnorm(100))~rnorm(100))
 }
 \arguments{
 \item{col}{is the vecor of colors}

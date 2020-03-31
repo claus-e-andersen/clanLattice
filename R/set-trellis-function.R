@@ -2,7 +2,8 @@
 #' @description Define defaults for lattice plotting (cf. settrellis in the Hmisc library)
 #' @usage
 #'   set.trellis(col=c(8,6,6,6),pch=c(1,16))
-#'   xyplot(I(rnorm(100))~rnorm(100))#' @name set.trellis
+#'   xyplot(I(rnorm(100))~rnorm(100))
+#' @name set.trellis
 #' @author Claus E. Andersen
 #' @return void. The side effect is that the trellis/lattice parameters have changed.
 #' @param col is the vecor of colors
