@@ -241,8 +241,8 @@ panel.binned.errorbars <- function(x, y, subscripts,
       use.no.group.symbol <- T
     }
     # Loop through all groups
-    for(x.bin.no in unique(codes.ca(groups.use))) {
-      ok <- codes.ca(groups.use) == x.bin.no
+    for(x.bin.no in unique(clanTools::codes.ca(groups.use))) {
+      ok <- clanTools::codes.ca(groups.use) == x.bin.no
       x.bin.name <- unique(as.character(groups.use[ok]))
       x.use <- x[ok]
       y.use <- y[ok]
