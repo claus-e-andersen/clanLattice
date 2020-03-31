@@ -27,7 +27,7 @@ panel.binned.errorbars <- function(x, y, subscripts,
                               show2 = FALSE, x.width2 = 4, lwd.bar2 = 2, col.bar2 = 1, lwd.line2 = 2, 
                               col.line2 = 1, lty.line2 = 1, col.nogroup = 1, pch.nogroup = 16, 
                               cex.nogroup = 1, lwd.nogroup = 1,
-                              x.bins.function = function(x){round.resolution(x, 1, 0)}, 
+                              x.bins.function = function(x){clanTools::round.resolution(x, 1, 0)}, 
                               x.center.function = function(x){mean(x, na.rm = TRUE)},
                               y.center.function = function(x){mean(x, na.rm = TRUE)}, 
                               y.low.function = function(x){ok <- !is.na(x)
@@ -155,7 +155,7 @@ panel.binned.errorbars <- function(x, y, subscripts,
     # Default functions
     if(is.null(err.control$x.bins.function)) err.control$x.bins.function <- function(x)
     {
-      round.resolution(x, 1, 0)
+      clanTools::round.resolution(x, 1, 0)
     }
     if(is.null(err.control$x.center.function))
       err.control$x.center.function <- function(x)
