@@ -5,12 +5,12 @@ Title: R functions Lattice plotting
 Author: Claus E. Andersen
 Maintainer: Claus E. Andersen <clan@dtu.dk>
 Description: An R library of functions for Lattice plotting
-URL: www.dtu.dk
 Depends:
     R (>= 3.1.1),
+    lattice
+Imports:
     dplyr,
     grid,
-    lattice,
     latticeExtra
 License: GPL (>= 3)
 Repository: GITHUB / claus-e-andersen
