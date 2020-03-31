@@ -152,7 +152,7 @@ panel.ebars <- function(x, y, subscripts,
     } # y.wanted
     
     if(point.wanted){
-      grid.points(x,y,gp=gp.point,default.units='native',...)
+      grid::grid.points(x,y,gp=gp.point,default.units='native',...)
     }
     
   } # end panel.ebars
