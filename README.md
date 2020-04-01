@@ -6,7 +6,11 @@ Lattice graphical system in R. Lattice is a panel-based, high-level data visuali
 The system is a re-implementation and improvement of Trellis plots from S-plus. The design of Trellis plots are based on the original research by Bill Cleveland from Bell Labs [2]. 
 
 An important function in the clanLattice package is txtplot() which enables production of
-automated measurement reports consisting of both text and lattice plots. 
+automated measurement reports consisting of both text, tables with dataframe output and lattice plots.
+The system enables detailed formatting (e.g. number of significant digits) of numerical output in 
+tables as required in technical reports. 
+
+The clanLattice package also contains special panel functions for plotting of errorbars. An important feature is that errorbars can be offset from the original data, which is useful if you want to see both both.  
 
 Examples of plots are in the pdfs-folder:
 https://github.com/claus-e-andersen/clanLattice/tree/master/pdfs
