@@ -8,8 +8,8 @@ The use of panel functions in Lattice plots means that it is easy to present spe
 
 An important function in the clanLattice package is txtplot() which enables production of
 automated measurement reports consisting of a combination of graphical plots, text, and tables with dataframe output. 
-The system enables detailed formatting (e.g. number of significant digits) of numerical output in 
-tables as required in technical reports. The formatting is carried out using a pretty-function written by the user allowing for complete control over how each individual number should be formated.  
+The system provides detailed formatting capabilities of numerical output in 
+tables as required in technical reports. The formatting is carried out using a pretty-function written by the user allowing for complete control over how each individual number should be formated (e.g. number of significant digits, number of digits conditional on the column of the table, the type of data, and the value of individual data points).  
 
 The clanLattice package also contains special panel functions for plotting of errorbars (uncertainty bars). An important feature is that errorbars can be offset from the original data, which is useful if you want to see both both or if you need to distinguish otherwise overlapping errorbars. 
 
