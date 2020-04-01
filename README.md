@@ -14,6 +14,8 @@ tables as required in technical reports.
 
 The clanLattice package also contains special panel functions for plotting of errorbars. An important feature is that errorbars can be offset from the original data, which is useful if you want to see both both.  
 
+The clanLattice package is for production of automates measurement reports in the context of metrology research and calibrations under DS/EN ISO/IEC 17025:2017 accreditation (see www.mrdc.dtu.dk). 
+
 Examples of plots are in the pdfs-folder:
 https://github.com/claus-e-andersen/clanLattice/tree/master/pdfs
 
