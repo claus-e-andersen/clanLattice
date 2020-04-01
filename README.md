@@ -2,15 +2,19 @@ clanLattice
 ===========
 
 clanLattice is an R package. The purpose of the package is to provide functions that facilitate creation of graphs using the 
-Lattice graphical system in R. Lattice is a panel-based, high-level data visualization system mainly authored by Deepayan Sarkar.
-The system is a re-implementation and improvement of the original Trellis plots from S-plus. The design of Trellis plots are based on the original research by Bill Cleveland from Bell Labs. 
+Lattice graphical system in R. Lattice is a panel-based, high-level data visualization system mainly authored by Deepayan Sarkar [1].
+The system is a re-implementation and improvement of the original Trellis plots from S-plus. The design of Trellis plots are based on the original research by Bill Cleveland from Bell Labs [2]. 
 
-An important function in this package is txtplot() which enables production of
+An important function in the clanLattice package is txtplot() which enables production of
 automated measurement reports consisting of both text and lattice plots. 
 
 Examples of plots are in the pdfs-folder:
 https://github.com/claus-e-andersen/clanLattice/tree/master/pdfs
 
+[1] Deepanyan Sarkar: "Lattice. Multivariate data visualization with R" (Spring, 2008).
+[2] William S. Cleveland: "The elements of graphing data" (Hobart Press, 1994).
+
+-------------
 
 To install this package do the following:
 
