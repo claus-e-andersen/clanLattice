@@ -12,9 +12,9 @@ automated measurement reports consisting of a combination of graphical plots, te
 The system enables detailed formatting (e.g. number of significant digits) of numerical output in 
 tables as required in technical reports. 
 
-The clanLattice package also contains special panel functions for plotting of errorbars. An important feature is that errorbars can be offset from the original data, which is useful if you want to see both both.  
+The clanLattice package also contains special panel functions for plotting of errorbars (uncertainty bars). An important feature is that errorbars can be offset from the original data, which is useful if you want to see both both or if you need to distinguish otherwise overlapping errorbars. 
 
-The clanLattice package is for production of automated measurement reports in the context of metrology research and calibrations under DS/EN ISO/IEC 17025:2017 accreditation (see www.mrdc.dtu.dk). 
+The clanLattice package is used extensively for production of automated measurement reports in the context of metrology research and calibrations under DS/EN ISO/IEC 17025:2017 accreditation (see www.mrdc.dtu.dk). 
 
 Examples of plots are in the pdfs-folder:
 https://github.com/claus-e-andersen/clanLattice/tree/master/pdfs
