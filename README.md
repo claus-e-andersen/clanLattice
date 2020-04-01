@@ -8,7 +8,7 @@ The system is a re-implementation and improvement of Trellis plots from S-plus w
 The use of panel functions in Lattice plots means that it is easy to present specific modelling results or other supplementary information within each panel. 
 
 An important function in the clanLattice package is txtplot() which enables production of
-automated measurement reports consisting of both text, tables with dataframe output and lattice plots.
+automated measurement reports consisting of a combination of graphical plots, text, and tables with dataframe output. 
 The system enables detailed formatting (e.g. number of significant digits) of numerical output in 
 tables as required in technical reports. 
 
