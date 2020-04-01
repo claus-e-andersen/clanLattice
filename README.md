@@ -1,7 +1,15 @@
 clanLattice
 ===========
 
-Functions using the graphical package in R called Lattice. 
+The clanLattice package contains functions that facilitates creation of graphs using the 
+Lattice package.   
+
+An important function in this package is txtplot() which enables production of
+automated measurement reports consisting of both text and lattice plots. 
+
+Examples of plots are in the pdfs-folder:
+https://github.com/claus-e-andersen/clanLattice/tree/master/pdfs
+
 
 To install this package do the following:
 
