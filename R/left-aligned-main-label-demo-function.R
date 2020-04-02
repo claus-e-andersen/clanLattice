@@ -14,9 +14,9 @@
 left.aligned.main.label.demo <- function(){
 
 main.txt <- 
-"Ionization chamber kQ-results (grouped) stratified by beam quality, model type and traceability 
-Errorbars show standard uncertainties for one single ionization chamber (k=1)
-IAEA TRS-398 generic data = grey line. 
+"Ionization chamber kQ-results stratified by beam quality, model type and traceability
+To produce a left-aligned main label (such as this one), we used a textgrob as given in the source code.
+See Lattice book p.152 / sec. 9.2.1 + demo(\"labels\",package=\"lattice\").
 IAEA TRS-398 new data (2019) = green line."
   
 plt <- xyplot(Sepal.Length ~ Sepal.Width,
