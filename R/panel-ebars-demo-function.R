@@ -25,7 +25,7 @@ panel.ebars.demo <- function(){
                 x.minus=rep(5.5,nrow(df)),x.plus=xx,
                 y.plus=3*df$Gy.err, y.minus=1*df$Gy.err,
                 panel=function(x,y,subscripts,...){
-                  panel.ebars(x,y,subscripts, x.width=4, y.width=10,point.wanted=TRUE, gp.point=gpar(col='blue',lwd=3,cex=0.7),pch=16,...)
+                  panel.ebars(x,y,subscripts, x.width=4, y.width=10,point.wanted=TRUE, gp.point=grid::gpar(col='blue',lwd=3,cex=0.7),pch=16,...)
                   panel.xyplot(x,y,col='red',type="p",pch=1,cex=2,...)
                 },aspect=1)
   print(plt)
@@ -38,18 +38,19 @@ panel.ebars.demo <- function(){
                 x.minus=rep(5.5,nrow(df)),x.plus=xx,
                 y.plus=3*df$Gy.err, y.minus=1*df$Gy.err,
                 panel=function(x,y,subscripts,groups,...){
-                  panel.ebars(x,y,subscripts, 
+                  panel.ebars2(x,y,subscripts, 
                               y.wanted=TRUE,x.wanted=FALSE,point.wanted=FALSE,
                               x.offset=0,y.offset=0,x.inner=0,x.width=3,y.width=3,y.inner=0,...)
                   
-                  panel.ebars(x,y,subscripts,x.err=rep(0.2,nrow(df)),y.err=rep(0.2,nrow(df)), 
+                  panel.ebars2(x,y,subscripts,x.err=rep(0.2,nrow(df)),y.err=rep(0.2,nrow(df)), 
                               y.wanted=TRUE,x.wanted=FALSE,point.wanted=FALSE,
+                              point.with.offset.wanted=FALSE,
                               x.offset=0,y.offset=3,x.inner=0,x.width=3,y.width=3,y.inner=0)
                   
                   panel.superpose(x,y,subscripts,groups,...)
                 },
                 aspect=1)
   print(plt)
-  
+
   'ByeBye'
 } # panel.ebars.demo
