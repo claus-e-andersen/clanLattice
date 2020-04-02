@@ -299,6 +299,7 @@ panel.ebars <- function(x, y, subscripts,
     y.offset <- y.offset.B - y.offset.A
     
     x0 <- x + y.offset
+    y0 <- y + x.offset
     grid::grid.segments(x0, y.minus, x0, pmax(y.minus, y - y.inner), 
                   gp = gp.y, default.units = "native")
     grid::grid.segments(x0, pmin(y.plus, y + y.inner), x0, y.plus, 
