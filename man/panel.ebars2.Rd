@@ -62,6 +62,8 @@ something like x.err = rep(2.3,nrow(df)) rather than just x.err = 2.3.}
 
 \item{point.wanted}{= TRUE means that a separate point will be drawn at the central data.point.}
 
+\item{point.with.offset.wanted}{= TRUE is a point should be added (this is a new feature)}
+
 \item{gp.point}{= graphical parameters for the separate data point to be drawn.}
 }
 \value{

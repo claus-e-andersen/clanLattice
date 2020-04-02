@@ -220,81 +220,109 @@ panel.ebars <- function(x, y, subscripts,
 #' @param gp.x = graphical parameters for the x-errorbars.
 #' @param gp.xwhisker = graphical parameters for the whiskers for the x-errorbars.
 #' @param point.wanted = TRUE means that a separate point will be drawn at the central data.point.
+#' @param point.with.offset.wanted = TRUE is a point should be added (this is a new feature)
 #' @param gp.point = graphical parameters for the separate data point to be drawn.  
 #' @export panel.ebars2
-panel.ebars2 <- function (x, y, subscripts, x.wanted = TRUE, y.wanted = TRUE, 
-            x.err = NULL, x.minus = NULL, x.plus = NULL, y.err = NULL, 
-            y.minus = NULL, y.plus = NULL, x.width = 4, y.width = 4, 
-            x.inner = 3, y.inner = 2, x.offset = 0, y.offset = 0, gp.x = grid::gpar(),  
-            gp.xwhisker = grid::gpar(), gp.y = grid::gpar(), gp.ywhisker = grid::gpar(),
-            point.wanted = FALSE, gp.point = grid::gpar(), ...) 
-  {
-    if (is.null(x.err)) 
-      x.err <- rep(NA, length(x))
-    if (is.null(x.plus)) 
-      x.plus <- x.err
-    if (is.null(x.minus)) 
-      x.minus <- x.err
-    if (is.null(y.err)) 
-      y.err <- rep(NA, length(x))
-    if (is.null(y.plus)) 
-      y.plus <- y.err
-    if (is.null(y.minus)) 
-      y.minus <- y.err
-    if (x.wanted) {
-      x.plus <- x + x.plus[subscripts]
-      x.minus <- x - x.minus[subscripts]
-      x.inner <- grid::convertX(grid::unit(c(0, x.inner), "mm"), "native", 
-                          valueOnly = TRUE)
-      x.inner <- x.inner[2] - x.inner[1]
-      x.offset <- grid::convertY(grid::unit(c(0, x.offset), "mm"), "native", 
-                           valueOnly = TRUE)
-      x.offset <- x.offset[2] - x.offset[1]
+  panel.ebars2 <- function (x, y, subscripts, x.wanted = TRUE, y.wanted = TRUE, 
+                                 x.err = NULL, x.minus = NULL, x.plus = NULL, y.err = NULL, 
+                                 y.minus = NULL, y.plus = NULL, x.width = 4, y.width = 4, 
+                                 x.inner = 1, y.inner = 1, x.offset = 0, y.offset = 0, gp.x = grid::gpar(), 
+                                 gp.xwhisker = grid::gpar(), gp.y = grid::gpar(), gp.ywhisker = grid::gpar(), 
+                                 point.wanted = FALSE, point.with.offset.wanted = FALSE, gp.point = grid::gpar(), pch.point=16,...) 
+{
+  # The changes in panel.ebars.revised have mainly been motivated
+  # by needs related to dotplot with errorbars.
+  # Added: pch=pch.point
+  # Added: point.with.offset.wanted
+  # Revised: June 22, 2019
+  # Revised: November 9, 2019
+  
+  x <- as.numeric(x)
+  y <- as.numeric(y)
+  if (is.null(x.err)) 
+    x.err <- rep(NA, length(x))
+  if (is.null(x.plus)) 
+    x.plus <- x.err
+  if (is.null(x.minus)) 
+    x.minus <- x.err
+  if (is.null(y.err)) 
+    y.err <- rep(NA, length(x))
+  if (is.null(y.plus)) 
+    y.plus <- y.err
+  if (is.null(y.minus)) 
+    y.minus <- y.err
+  if (x.wanted) {
+    x.plus <- x + x.plus[subscripts]
+    x.minus <- x - x.minus[subscripts]
+    x.inner <- grid::convertX(grid::unit(c(0, x.inner), "mm"), "native", 
+                        valueOnly = TRUE)
+    x.inner <- x.inner[2] - x.inner[1]
+    
+    # Deleted: November 9, 2019
+    # x.offset <- convertY(unit(c(0, x.offset), "mm"), "native",valueOnly = TRUE)
+    # x.offset <- x.offset[2] - x.offset[1]
+    
+    # For grouped data, we may need to offset data individually (e.g. groupwise).
+    x.offset.A <- grid::convertY(grid::unit(c(0), "mm"), "native", valueOnly = TRUE)
+    x.offset.B <- grid::convertY(grid::unit(c(x.offset), "mm"), "native", valueOnly = TRUE)
+    x.offset <- x.offset.B - x.offset.A
+    
+    if(!FALSE){     
       y0 <- y + x.offset
-      grid::grid.segments(x.minus, y0, pmax(x.minus, x - x.inner), 
-                    y0, gp = gp.x, default.units = "native")
-      grid::grid.segments(pmin(x.plus, x + x.inner), y0, x.plus, 
-                    y0, gp = gp.x, default.units = "native")
+      grid::grid.segments(x.minus, y0, pmax(x.minus, x - x.inner), y0, 
+                    gp = gp.x, default.units = "native")
+      grid::grid.segments(pmin(x.plus, x + x.inner), y0, x.plus, y0, 
+                    gp = gp.x, default.units = "native")
       if (x.width > 0) {
-        dy.usr <-grid::convertY(grid::unit(c(0, x.width), "mm"), "native", 
-                           valueOnly = TRUE)
+        dy.usr <- grid::convertY(grid::unit(c(0, x.width), "mm"), "native", valueOnly = TRUE)
         dy.usr <- dy.usr[2] - dy.usr[1]
         grid::grid.segments(x.plus, y0 - dy.usr/2, x.plus, y0 + 
                         dy.usr/2, gp = gp.xwhisker, default.units = "native")
         grid::grid.segments(x.minus, y0 - dy.usr/2, x.minus, y0 + 
                         dy.usr/2, gp = gp.xwhisker, default.units = "native")
-      }
+      }}
+  }
+  if (y.wanted) {
+    y.plus <- y + y.plus[subscripts]
+    y.minus <- y - y.minus[subscripts]
+    y.inner <- grid::convertY(grid::unit(c(0, y.inner), "mm"), "native", 
+                        valueOnly = TRUE)
+    y.inner <- y.inner[2] - y.inner[1]
+    
+    # Deleted: November 9, 2019
+    # y.offset <- convertX(unit(c(0, y.offset), "mm"), "native", valueOnly = TRUE)
+    # y.offset <- y.offset[2] - y.offset[1]
+    
+    # For grouped data, we may need to offset data individually (e.g. groupwise).        
+    y.offset.A <- grid::convertX(grid::unit(c(0), "mm"), "native", valueOnly = TRUE)
+    y.offset.B <- grid::convertX(grid::unit(c(y.offset), "mm"), "native", valueOnly = TRUE)
+    y.offset <- y.offset.B - y.offset.A
+    
+    x0 <- x + y.offset
+    grid::grid.segments(x0, y.minus, x0, pmax(y.minus, y - y.inner), 
+                  gp = gp.y, default.units = "native")
+    grid::grid.segments(x0, pmin(y.plus, y + y.inner), x0, y.plus, 
+                  gp = gp.y, default.units = "native")
+    if (y.width > 0) {
+      dx.usr <- grid::convertX(grid::unit(c(0, y.width), "mm"), "native", valueOnly = TRUE)
+      dx.usr <- dx.usr[2] - dx.usr[1]
+      grid::grid.segments(x0 - dx.usr/2, y.plus, x0 + dx.usr/2, 
+                    y.plus, gp = gp.ywhisker, default.units = "native")
+      grid::grid.segments(x0 - dx.usr/2, y.minus, x0 + dx.usr/2, 
+                    y.minus, gp = gp.ywhisker, default.units = "native")
     }
-    if (y.wanted) {
-      y.plus <- y + y.plus[subscripts]
-      y.minus <- y - y.minus[subscripts]
-      y.inner <- grid::convertY(grid::unit(c(0, y.inner), "mm"), "native", 
-                          valueOnly = TRUE)
-      y.inner <- y.inner[2] - y.inner[1]
-      y.offset <- grid::convertX(grid::unit(c(0, y.offset), "mm"), "native", 
-                           valueOnly = TRUE)
-      y.offset <- y.offset[2] - y.offset[1]
-      x0 <- x + y.offset
-      grid::grid.segments(x0, y.minus, x0, pmax(y.minus, y - y.inner), 
-                    gp = gp.y, default.units = "native")
-      grid::grid.segments(x0, pmin(y.plus, y + y.inner), x0, y.plus, 
-                    gp = gp.y, default.units = "native")
-      if (y.width > 0) {
-        dx.usr <- grid::convertX(grid::unit(c(0, y.width), "mm"), "native", 
-                           valueOnly = TRUE)
-        dx.usr <- dx.usr[2] - dx.usr[1]
-        grid::grid.segments(x0 - dx.usr/2, y.plus, x0 + dx.usr/2, 
-                      y.plus, gp = gp.ywhisker, default.units = "native")
-        grid::grid.segments(x0 - dx.usr/2, y.minus, x0 + dx.usr/2, 
-                      y.minus, gp = gp.ywhisker, default.units = "native")
-      }
-    }
-    if (point.wanted) {
-      grid::grid.points(x, y, gp = gp.point, default.units = "native")  
-      #  I removed the dots to get rid on an "unused arguments error!!  ...)
-      # Feb. 22, 2019
-    }
-  }# panel.ebars2
+  }
+  if (point.wanted) {
+    grid::grid.points(x, y, gp = gp.point, default.units = "native",pch=pch.point)
+  }
+  if (point.with.offset.wanted) {
+    #Added: Nov. 9, 2019
+    grid::grid.points(x0, y0, gp = gp.point, default.units = "native",pch=pch.point)
+  }
+}# panel.ebars2
+
+
+
 
 
 
@@ -335,7 +363,7 @@ panel.ebars2 <- function (x, y, subscripts, x.wanted = TRUE, y.wanted = TRUE,
 #' @param err.lwd is the line width for the error bars.
 #' @param err.width is the width of the error bars (i.e. the wiskers) in mm.
 #' @param err.offsetis an offset for the error bar relative to the mean (x).
-#' @export panel.ebars.grouped
+#' @export panel.ebars.grouped 
 panel.ebars.grouped <- function(x, y, type="sd", level=0.95, err.col=1, err.type="p", err.pch=16, err.cex=1, err.lwd=1, err.width=3, err.offset=0,...){
   # Compute and plot groupwise standard deviations and errorbars.
   # Claus E. Andwersen
