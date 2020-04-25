@@ -233,7 +233,7 @@ txtplot <- function(txt, new = TRUE, start.pos = NULL, maintain.start.pos = TRUE
       #df  <- create.latex.table(txt,NL="",pretty.func = function(x, col.num = 1){if(is.numeric(x))signif(x,4)else x})
       df <- clanTools::create.latex.table(txt, NL = "", col.sign = 
                                  col.sign, ...)
-      df <- leading.blanks(df, " ")
+      df <- clanTools::leading.blanks(df, " ")
     }
     txt <- ""
     for(i in 1:nrow(df)) {
