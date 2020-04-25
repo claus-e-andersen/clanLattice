@@ -231,7 +231,7 @@ txtplot <- function(txt, new = TRUE, start.pos = NULL, maintain.start.pos = TRUE
       y0 <- min(y0, usr[4] - line.height)
     if(adjust.table) {
       #df  <- create.latex.table(txt,NL="",pretty.func = function(x, col.num = 1){if(is.numeric(x))signif(x,4)else x})
-      df <- create.latex.table(txt, NL = "", col.sign = 
+      df <- clanTools::create.latex.table(txt, NL = "", col.sign = 
                                  col.sign, ...)
       df <- leading.blanks(df, " ")
     }
