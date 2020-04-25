@@ -10,6 +10,9 @@ require(grid)
  pp
  pp[[3]]
 }
+\arguments{
+\item{sec.delay:}{Delay between the plots.}
+}
 \value{
 A Lattice plot
 }

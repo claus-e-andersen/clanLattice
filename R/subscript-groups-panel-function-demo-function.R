@@ -31,9 +31,10 @@
 #' @name panel.function.demo
 #' @author Claus E. Andersen
 #' @return A Lattice plot
+#' @param sec.delay: Delay between the plots.
 #' @export panel.function.demo
 panel.function.demo <- 
-  function () 
+  function (sec.delay=3) 
   {
     print("Welcome to panel.function.demo")
     print("Clear df.outside (was set to NULL)")
@@ -100,9 +101,12 @@ panel.function.demo <-
                    )# xyplot
 
     print(plt1)
+    Sys.sleep(sec.delay)
     print(plt2)
+    Sys.sleep(sec.delay)
     plt3 <- update(plt2, groups = iris$Species)
-    plt3
+    print(plt3)
+    Sys.sleep(sec.delay)
     list(plt1, plt2, plt3)
     # Show first 3 rows of df.outside
     txtplot(get("df.outside", envir = sys.frame(0))[1:3,])
