@@ -28,12 +28,15 @@ names(iris)
 
 
 plt1 <- xyplot(Sepal.Length ~ Sepal.Width | Species,
+               par.strip.text=list(cex=1.5),
                data=iris,
                panel=function(x, y, subscripts, groups,...){
                  panel.xyplot(x,y,...)
                }# panel function
 )# xyplot
 
+
+df.outside <- NULL
 
 plt2 <- xyplot(Sepal.Length ~ Sepal.Width|Species,
                data=iris,
@@ -48,13 +51,24 @@ plt2 <- xyplot(Sepal.Length ~ Sepal.Width|Species,
                  grid::grid.text(paste("SD =",sprintf("%.5f", round(sd(y),5))) ,     x = grid::unit(0.1, "npc"), y = grid::unit(0.85, "npc"), just=0, gp=grid::gpar(cex=cex0))
                  
                  # Demonstration of the use of subscripts:
-                 print(unique(iris$Species[subscripts]))
+                 x.Specises <- paste(unique(iris$Species[subscripts]),collapse="")
+                 print(x.Specises)
                  
                  if(missing(groups)){
                    panel.xyplot(x, y, ...)} else{
                      panel.superpose(x, y, subscripts,groups, ...)
                    }#if 
+  
                  
+                 # How to get data in and out of the panel function
+                 df0 <- data.frame(x.mean=mean(x), y.mean=mean(y), panel.no = panel.number(),Specises=x.Specises,N=length(x))
+                 
+                 df.out <- get("df.outside",envir=sys.frame(0))
+                 if(is.null(df.out)){df.out <- df0} else {df.out <- rbind(df.out,df0)}
+                 assign("df.outside",df.out,envir=sys.frame(0))
+                 
+                 
+                                
                }# panel function
 )# xyplot
 
@@ -63,4 +77,7 @@ plt2
 plt3 <- update(plt2, groups=iris$Species)
 plt3
 list(plt1,plt2,plt3)
+
+txtplot(df.outside)
+print(df.outside)
 }# panel.function.demo
