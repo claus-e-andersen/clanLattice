@@ -27,7 +27,15 @@ simply use:
               panel.superpose(x, y, subscripts,groups, ...)
               \}#if 
               
-The use of \code{panel.number()}, \code{current.row}, and \code{current.column()} is also demonstrated.
+The use of \code{panel.number()}, \code{current.row}, and \code{current.column()} is also demonstrated.              
+
+Further tricks:
+
+   \code{par.strip.text(cex=1.2)}
+   
+   and 
+   
+   how to get data in and out of a panel using assign and get to the top environment (\code{df.outside}).
 }
 \author{
 Claus E. Andersen

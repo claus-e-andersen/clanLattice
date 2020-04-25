@@ -12,7 +12,16 @@
 #'               panel.superpose(x, y, subscripts,groups, ...)
 #'               \}#if 
 #'               
-#' The use of \code{panel.number()}, \code{current.row}, and \code{current.column()} is also demonstrated.               
+#' The use of \code{panel.number()}, \code{current.row}, and \code{current.column()} is also demonstrated.              
+#' 
+#' Further tricks:
+#' 
+#'    \code{par.strip.text(cex=1.2)}
+#'    
+#'    and 
+#'    
+#'    how to get data in and out of a panel using assign and get to the top environment (\code{df.outside}).
+#'       
 #' @usage
 #'  require(grid)
 #'  require(lattice)
@@ -30,7 +39,8 @@ panel.function.demo <-
     print("Clear df.outside (was set to NULL)")
     assign("df.outside", NULL, envir = sys.frame(0))
       
-    plt1 <- xyplot(Sepal.Length ~ Sepal.Width | Species, par.strip.text = list(cex = 1.5), 
+    plt1 <- xyplot(Sepal.Length ~ Sepal.Width | Species, 
+                   par.strip.text = list(cex = 1.5), 
                    data = iris, 
                    panel = function(x, y, subscripts, groups, ...) {
                      panel.xyplot(x, y, ...)
@@ -94,7 +104,8 @@ panel.function.demo <-
     plt3 <- update(plt2, groups = iris$Species)
     plt3
     list(plt1, plt2, plt3)
-    txtplot(get("df.outside", envir = sys.frame(0))[1:8,])
+    # Show first 3 rows of df.outside
+    txtplot(get("df.outside", envir = sys.frame(0))[1:3,])
     print(df.outside)
     print("The dataframe df.outside is now available from the top environment.")
     print("It contains data collected within the panel function!")
