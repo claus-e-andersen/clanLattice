@@ -76,10 +76,10 @@ txtplot.demo <- function(){
     res <- x
     if(is.numeric(x)){
       res <- signif(x,5)
-      if(col.num==2){res <- round.ca(x,1)} 
-      if(col.num==3){res <- round.ca(x,1)} 
-      if(col.num==4){res <- round.ca(x,6)} 
-      if(col.num==5){res <- round.ca(x,1)}
+      if(col.num==2){res <- clanTools::round.ca(x,1)} 
+      if(col.num==3){res <- clanTools::round.ca(x,1)} 
+      if(col.num==4){res <- clanTools::round.ca(x,6)} 
+      if(col.num==5){res <- clanTools::round.ca(x,1)}
     } 
     res
   }
@@ -125,7 +125,7 @@ txtplot.demo <- function(){
   
   PP <- list(0.1,0.9,1)
   PP <- txtplot("Table with key results:\n", new=F, PP)
-  pretty.func2 <- function(x, col.num = 1){if(is.numeric(x))round.ca(x,5)else x}
+  pretty.func2 <- function(x, col.num = 1){if(is.numeric(x))clanTools::round.ca(x,5)else x}
   PP <- txtplot(df[,c(4,5)], new=F, PP, cex=0.6, pretty.func=pretty.func2)
   
   
