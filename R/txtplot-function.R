@@ -162,8 +162,8 @@ txtplot <- function(txt, new = TRUE, start.pos = NULL, maintain.start.pos = TRUE
   
   usr <- par("usr")
   if(trace) {
-    llines(c(0, 0, 1, 1, 0), c(0, 1, 1, 0, 0), lwd = 2, col = 6)
-    llines(c(usr[1], usr[1], usr[2], usr[2], usr[1]), c(usr[3],
+    lattice::llines(c(0, 0, 1, 1, 0), c(0, 1, 1, 0, 0), lwd = 2, col = 6)
+    lattice::llines(c(usr[1], usr[1], usr[2], usr[2], usr[1]), c(usr[3],
                                                         usr[4], usr[4], usr[3], usr[3]), lwd = 2, col = 8)
   }
   if(!is.null(box)) {
@@ -183,7 +183,7 @@ txtplot <- function(txt, new = TRUE, start.pos = NULL, maintain.start.pos = TRUE
       box$lwd <- 3
     if(is.null(box$lty))
       box$lty <- 4
-    llines(c(bc[1], bc[1], bc[2], bc[2], bc[1]), c(bc[3], bc[4],
+    lattice::llines(c(bc[1], bc[1], bc[2], bc[2], bc[1]), c(bc[3], bc[4],
                                                    bc[4], bc[3], bc[3]), lwd = box$lwd, col = box$col,
            lty = box$lty)
   }
@@ -217,10 +217,10 @@ txtplot <- function(txt, new = TRUE, start.pos = NULL, maintain.start.pos = TRUE
   }
   dat.frame <- F
   if(trace) {
-    ltext(0, 0, "0,0")
-    ltext(0, 1, "0,1")
-    ltext(1, 0, "1,0")
-    ltext(1, 1, "1,1")
+    lattice::ltext(0, 0, "0,0")
+    lattice::ltext(0, 1, "0,1")
+    lattice::ltext(1, 0, "1,0")
+    lattice::ltext(1, 1, "1,1")
   }
   NN <- 0
   line.wanted <- F
@@ -302,7 +302,7 @@ txtplot <- function(txt, new = TRUE, start.pos = NULL, maintain.start.pos = TRUE
         x.right <- char.groupC$x.right
         y.lift <- char.groupC$y.lift
       }
-      ltext(x0 + x.right, y0 + y.lift, substring(txt, i,
+      lattice::ltext(x0 + x.right, y0 + y.lift, substring(txt, i,
                                                  i), col = col, font = font, font.family = font.family, cex = cex)
       if(dat.frame & line.wanted) {
         xL.start <- x.start.pos + table.line.pos$
@@ -325,7 +325,7 @@ txtplot <- function(txt, new = TRUE, start.pos = NULL, maintain.start.pos = TRUE
         xL.stop <- min(xL.stop, 1)
         if(yL < usr[3] | yL > usr[4])
           yL <- NA
-        llines(c(xL.start, xL.stop), c(yL, yL), type = 
+        lattice::llines(c(xL.start, xL.stop), c(yL, yL), type = 
                  "l", col = col)
         line.wanted <- F
       }
@@ -345,7 +345,7 @@ txtplot <- function(txt, new = TRUE, start.pos = NULL, maintain.start.pos = TRUE
       xL.start <- max(xL.start, 0)
       xL.stop <- min(xL.stop, 1)
       if(yL < usr[3] | yL > usr[4]) yL <- NA
-      llines(c(xL.start, xL.stop), c(yL, yL), type = "l", col = col)
+      lattice::llines(c(xL.start, xL.stop), c(yL, yL), type = "l", col = col)
     }
   }
   # character
