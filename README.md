@@ -14,7 +14,7 @@ The system provides detailed formatting capabilities of numerical output in
 tables as required in technical reports. The formatting is carried out using a so-called pretty-function written by the user allowing for complete control over how each individual number should be formated (e.g. the number of digits printed conditional on the type of data, the column in which the data point appears, and the numerical value of the data point). See Example-txtplot-demo.pdf and the accociated R-function:
 
 ```
-txtplot.demo(). 
+txtplot.demo()
 ```
 The clanLattice package also contains special panel functions for plotting of errorbars (uncertainty bars). An important feature is that errorbars can be offset from the original data, which is useful if you want to see both or if you need to distinguish otherwise overlapping errorbars. 
 
