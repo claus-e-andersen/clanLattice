@@ -3,16 +3,19 @@ clanLattice is an R package. The purpose of the package is to provide functions 
 lattice graphical system in R. 
 
 # What is lattice graphics?
-Lattice is a panel-based, high-level data visualization system authored by Deepayan Sarkar [1] using grid graphics [2]. The Lattice system is a re-implementation and improvement of Trellis plots from S-plus which in turn were designed based on original research by Bill Cleveland from Bell Labs [3]. 
+Lattice is a panel-based, high-level data visualization system authored by Deepayan Sarkar [1] using grid graphics [2]. The Lattice system is a re-implementation and improvement of Trellis plotting system from S-plus which in turn was designed based on original research by Bill Cleveland from Bell Labs [3]. 
 
-The use of panel functions in Lattice plots means that it is easy to present specific modelling results or other supplementary information within each panel. 
+The use of panel functions in lattice plots means that it is easy to present specific modelling results or other supplementary information within each panel. 
 
 # What are the main features of clanLattice?
 An important function in the clanLattice package is txtplot() which enables production of
 automated measurement reports consisting of a combination of graphical plots, text, and tables with dataframe output. 
 The system provides detailed formatting capabilities of numerical output in 
-tables as required in technical reports. The formatting is carried out using a so-called pretty-function written by the user allowing for complete control over how each individual number should be formated (e.g. the number of digits printed conditional on the type of data, the column in which the data point appears, and the numerical value of the data point). See Example-txtplot-demo.pdf and the accociated R-function txtplot.demo(). 
+tables as required in technical reports. The formatting is carried out using a so-called pretty-function written by the user allowing for complete control over how each individual number should be formated (e.g. the number of digits printed conditional on the type of data, the column in which the data point appears, and the numerical value of the data point). See Example-txtplot-demo.pdf and the accociated R-function:
 
+```
+txtplot.demo(). 
+```
 The clanLattice package also contains special panel functions for plotting of errorbars (uncertainty bars). An important feature is that errorbars can be offset from the original data, which is useful if you want to see both or if you need to distinguish otherwise overlapping errorbars. 
 
 # Main use case?
