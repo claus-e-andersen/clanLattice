@@ -5,7 +5,7 @@ lattice graphical system in R.
 # What is lattice graphics?
 Lattice is a panel-based, high-level data visualization system authored by Deepayan Sarkar [1] using grid graphics [2]. The Lattice system is a re-implementation and improvement of Trellis plotting system from S-plus which in turn was designed based on original research by Bill Cleveland from Bell Labs [3]. 
 
-The use of panel functions in lattice plots means that it is easy to present specific modelling results or other supplementary information within each panel. The lattice package has several features that are not available in ggplot2. A recend package called gggrid by Paul Murrell fixed some of these problems in ggplot [4] and provides some of the lattice functionality to ggplot2. 
+The use of panel functions in lattice plots means that it is easy to present specific modelling results or other supplementary information within each panel. The lattice package has several features that are not available in ggplot2. A recent package called gggrid by Paul Murrell fixes some of these problems in ggplot2 [4] and provides some of the lattice functionality to ggplot2. 
 
 # What are the main features of clanLattice?
 An important function in the clanLattice package is txtplot() which enables production of
