@@ -28,7 +28,7 @@ https://github.com/claus-e-andersen/clanLattice/tree/master/pdfs
 [1] Deepanyan Sarkar: "Lattice. Multivariate data visualization with R" (Spring, 2008).
 [2] Paul Murrell: "R graphics (3rd ed)" (CRC Press, 2019).
 [3] William S. Cleveland: "The elements of graphing data" (Hobart Press, 1994).
-[4] Paul Murrell: "Accessing 'grid' from 'ggplot2'. gggrid it's g-g-great", Technical Report 2021-01, Department of Statistics, The University of Auckland. https://www.stat.auckland.ac.nz/~paul/Reports/gggrid/gggrid.html
+[4] Paul Murrell: "Accessing 'grid' from 'ggplot2'. 'gggrid it's g-g-great'", Technical Report 2021-01, Department of Statistics, The University of Auckland. https://www.stat.auckland.ac.nz/~paul/Reports/gggrid/gggrid.html
 
 # How to install clanLattice?
 To install this package do the following:
