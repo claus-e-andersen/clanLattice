@@ -83,8 +83,10 @@ txtplot <- function(txt, new = TRUE, start.pos = NULL, maintain.start.pos = TRUE
   # Revised: July 30, 2006
   # Revised: July 31, 2006
   # Revised: October 30, 2011 (moved to R and updated)
+  # Revised: May 31, 2024 (for class(txt) == "character, collapse everything to one string).
+ 
   # Name: Claus E. Andersen
-  # Contact : clan@risoe.dtu.dk
+  # Contact : clan@dtu.dk
   
   # Arguments.
   #   txt :  the text to be plotted or a data.frame
@@ -252,6 +254,9 @@ txtplot <- function(txt, new = TRUE, start.pos = NULL, maintain.start.pos = TRUE
   }
   # data.frame
   if(class(txt) == "character") {
+    # May 31, 2024
+    if(length(txt)>1){print("txtplot warning: txt cannot be a vector of length >1. I will collapse everything.")}
+    txt <- paste(txt, collapse=" ")
     ##line.no <- 0
     char.no <- 0
     for(i in 1:nchar(txt)) {
